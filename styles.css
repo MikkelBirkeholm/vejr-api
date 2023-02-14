@@ -1,0 +1,125 @@
+:root {
+  --color-bg: #3a3845;
+  --color-text: #f7ccac;
+  --color-text-alt: #f7ccab;
+  --color-accent-1: #c69b7b;
+  --color-accent-2: #826f66;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+
+body {
+  padding: 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  width: clamp(2em, 900px, 95vw);
+  margin: auto;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding: 0;
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  color: var(--color-text-alt);
+  border-radius: 1rem;
+}
+
+.card::before {
+  content: attr(data-date);
+  font-size: 0.8rem;
+  position: absolute;
+  top: -1.1rem;
+  left: 1rem;
+}
+
+.card-overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 1) 80%
+  );
+  z-index: 0;
+}
+
+.card > *:not(.card-overlay) {
+  z-index: 1;
+}
+
+.temp {
+  display: flex;
+  flex-direction: column;
+}
+
+.min-temp {
+  font-size: 0.6rem;
+}
+
+h2 {
+  margin: 1rem 0;
+}
+
+.card-data {
+  display: flex;
+  flex-direction: row;
+  line-height: 1;
+  gap: 0.5rem;
+}
+
+.wind {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: black;
+  font-size: 0.7rem;
+}
+
+.rain {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: black;
+  font-size: 0.7rem;
+}
+
+#hourly {
+  display: flex;
+  gap: 1rem;
+}
+
+.hour {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.5rem;
+  padding: 0.5rem;
+}
+
+.hour-wrapper {
+  overflow: scroll;
+  width: 100%;
+}
