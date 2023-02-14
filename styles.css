@@ -1,9 +1,9 @@
 :root {
-  --color-bg: #3a3845;
-  --color-text: #f7ccac;
-  --color-text-alt: #f7ccab;
-  --color-accent-1: #c69b7b;
-  --color-accent-2: #826f66;
+  --color-bg: #6e85b7;
+  --color-text: #b2c8df;
+  --color-text-alt: #b3c9df;
+  --color-accent-1: #c4d7e0;
+  --color-accent-2: #f8f9d7;
 }
 
 * {
@@ -122,4 +122,11 @@ h2 {
 .hour-wrapper {
   overflow: scroll;
   width: 100%;
+  border: 1px dotted var(--color-text-alt);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
