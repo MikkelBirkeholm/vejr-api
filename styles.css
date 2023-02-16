@@ -38,6 +38,7 @@ ul {
   gap: 1rem;
   color: var(--color-text-alt);
   border-radius: 1rem;
+  background-size: cover;
 }
 
 .card::before {
